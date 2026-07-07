@@ -1,0 +1,42 @@
+﻿.customer-orders {
+  padding: 10px;
+}
+
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.order-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 16px 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.order-main h3 {
+  margin: 0 0 4px 0;
+}
+
+.order-date {
+  color: #888;
+  font-size: 13px;
+}
+
+.status-badge {
+  color: white;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.error {
+  color: #c0392b;
+}

@@ -1,4 +1,4 @@
-from django.conf import settings
+﻿from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
@@ -13,6 +13,9 @@ urlpatterns = [
     path("api/", include("accounts.urls")),
     path("api/", include("products.urls")),
     path("api/", include("tracking.urls")),
+    path("api/", include("orders.urls")),
+
+    path("api/", include("orders.urls")),
 
     path("api/login/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
     path("api/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
@@ -20,3 +23,4 @@ urlpatterns = [
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+

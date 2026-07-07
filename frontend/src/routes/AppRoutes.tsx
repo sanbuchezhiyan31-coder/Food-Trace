@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+﻿import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import Home from "../pages/Home/Home";
 import About from "../pages/About/About";
@@ -9,6 +9,10 @@ import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 
 import CustomerDashboard from "../pages/Customer/Dashboard/CustomerDashboard";
+import CustomerProducts from "../pages/Customer/Products/CustomerProducts";
+import CustomerOrders from "../pages/Customer/Orders/CustomerOrders";
+import CustomerTracking from "../pages/Customer/Tracking/CustomerTracking";
+import CustomerProfile from "../pages/Customer/Profile/CustomerProfile";
 import FarmerDashboard from "../pages/Farmer/Dashboard/FarmerDashboard";
 import AddProduct from "../pages/Farmer/AddProduct/AddProduct";
 import MyProducts from "../pages/Farmer/MyProducts/MyProducts";
@@ -35,41 +39,45 @@ function AppRoutes() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
 
-       <Route element={<ProtectedRoute />}>
+        <Route element={<ProtectedRoute />}>
 
-  {/* Customer */}
-  <Route element={<RoleRoute allowedRoles={["customer"]} />}>
-    <Route path="/customer" element={<CustomerDashboard />} />
-  </Route>
+          {/* Customer */}
+          <Route element={<RoleRoute allowedRoles={["customer"]} />}>
+            <Route path="/customer" element={<CustomerDashboard />} />
+            <Route path="/customer/products" element={<CustomerProducts />} />
+            <Route path="/customer/orders" element={<CustomerOrders />} />
+            <Route path="/customer/tracking" element={<CustomerTracking />} />
+            <Route path="/customer/profile" element={<CustomerProfile />} />
+          </Route>
 
-  {/* Farmer */}
-  <Route element={<RoleRoute allowedRoles={["farmer"]} />}>
-    <Route path="/farmer" element={<FarmerDashboard />} />
-    <Route path="/farmer/add-product" element={<AddProduct />} />
-    <Route path="/farmer/products" element={<MyProducts />} />
-    <Route path="/farmer/edit-product/:id" element={<EditProduct />} />
-    <Route path="/farmer/tracking" element={<FarmerTracking />} />
-    <Route path="/farmer/orders" element={<Orders />} />
-    <Route path="/farmer/reports" element={<Reports />} />
-    <Route path="/farmer/profile" element={<Profile />} />
-  </Route>
+          {/* Farmer */}
+          <Route element={<RoleRoute allowedRoles={["farmer"]} />}>
+            <Route path="/farmer" element={<FarmerDashboard />} />
+            <Route path="/farmer/add-product" element={<AddProduct />} />
+            <Route path="/farmer/products" element={<MyProducts />} />
+            <Route path="/farmer/edit-product/:id" element={<EditProduct />} />
+            <Route path="/farmer/tracking" element={<FarmerTracking />} />
+            <Route path="/farmer/orders" element={<Orders />} />
+            <Route path="/farmer/reports" element={<Reports />} />
+            <Route path="/farmer/profile" element={<Profile />} />
+          </Route>
 
-  {/* Distributor */}
-  <Route element={<RoleRoute allowedRoles={["distributor"]} />}>
-    <Route path="/distributor" element={<DistributorDashboard />} />
-  </Route>
+          {/* Distributor */}
+          <Route element={<RoleRoute allowedRoles={["distributor"]} />}>
+            <Route path="/distributor" element={<DistributorDashboard />} />
+          </Route>
 
-  {/* Retailer */}
-  <Route element={<RoleRoute allowedRoles={["retailer"]} />}>
-    <Route path="/retailer" element={<RetailerDashboard />} />
-  </Route>
+          {/* Retailer */}
+          <Route element={<RoleRoute allowedRoles={["retailer"]} />}>
+            <Route path="/retailer" element={<RetailerDashboard />} />
+          </Route>
 
-  {/* Admin */}
-  <Route element={<RoleRoute allowedRoles={["admin"]} />}>
-    <Route path="/admin" element={<AdminDashboard />} />
-  </Route>
+          {/* Admin */}
+          <Route element={<RoleRoute allowedRoles={["admin"]} />}>
+            <Route path="/admin" element={<AdminDashboard />} />
+          </Route>
 
-</Route>
+        </Route>
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>

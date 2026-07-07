@@ -1,4 +1,7 @@
-from django.contrib import admin
+﻿from django.contrib import admin
 from .models import Order
 
-admin.site.register(Order)
+@admin.register(Order)
+class OrderAdmin(admin.ModelAdmin):
+    list_display = ["id", "customer", "product", "quantity", "total_price", "delivery_status", "order_date"]
+    list_filter = ["delivery_status"]
