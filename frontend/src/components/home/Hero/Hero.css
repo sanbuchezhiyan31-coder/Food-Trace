@@ -1,0 +1,46 @@
+.hero {
+  min-height: calc(100vh - 80px);
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(46, 125, 50, 0.8)),
+    url("https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=1800") center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 72px 24px;
+}
+
+.hero-content {
+  width: min(780px, 100%);
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  line-height: 1.15;
+  margin-bottom: 18px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.hero p {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  margin-bottom: 28px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.hero button {
+  padding: 14px 24px;
+  background: linear-gradient(135deg, #ffffff 0%, #e8f5e9 100%);
+  border: none;
+  color: var(--green-700);
+  font-size: 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 700;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
+.hero button:hover {
+  transform: translateY(-2px);
+}
+
